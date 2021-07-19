@@ -4,8 +4,7 @@ function setRandomNumbersArr(length) {
     for (let i = 0; i < length; i++) {
         arr.push(Math.round(Math.random() * 100))
     }
-    // console.log(arr);
-    return arr
+    console.log(arr);
 }
 setRandomNumbersArr( 10)
 
@@ -15,7 +14,6 @@ function setRandomNumbersArrWithDiapason(length, diapason) {
     for (let i = 0; i < length; i++) {
         arr.push(Math.round(Math.random() * diapason))
     }
-    // console.log(arr);
     return arr
 }
 setRandomNumbersArrWithDiapason(15,1500)
@@ -23,19 +21,19 @@ setRandomNumbersArrWithDiapason(15,1500)
 let randomArr = setRandomNumbersArrWithDiapason(17,500).sort(function (i1, i2) {
     return i1-i2
 })
-// console.log(randomArr);
+console.log(randomArr);
 
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. відфільтрувати  його за допомоги filter, за лишивши тільки парні числа
 let randomArr2 = setRandomNumbersArrWithDiapason(11,330).filter(function (item) {
     return item % 2 === 0
 })
-// console.log(randomArr2);
+console.log(randomArr2);
 
 // - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на срінгові.
 let randomArr3 = setRandomNumbersArrWithDiapason(11,330).map(function (item) {
     return item.toString()
 })
-// console.log(randomArr3);
+console.log(randomArr3);
 
 // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 //створити пустий масив, наповнити його 10 об'єктами new User(....)
@@ -66,5 +64,5 @@ let usersFiltered = users.filter(function (user) {
     return user1.id- user2.id
 })
 
-// console.log(users);
-// console.log(usersFiltered);
+console.log(users);
+console.log(usersFiltered);
