@@ -122,18 +122,13 @@ objectValuesReturn(usersArr)
 let array1 = [6,7,8,9,10];
 let array2 = [4,3,2,1,0];
 
-
 function sumValues(array1, array2) {
     let array3 = [];
-    for (let i=0; i<array1.length;i++) {
         for (let j=0; j<array2.length;j++) {
-            if (i === j) {
-                let sum = 0;
-                sum = array1[i] + array2[j];
-                array3.push(sum);
-            }
+            let sum = 0;
+            sum = array1[j] + array2[j];
+            array3.push(sum);
         }
-    }
     return array3
 }
 console.log(sumValues(array1, array2))
