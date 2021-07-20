@@ -197,14 +197,14 @@ class Prince {
         this.age = age;
         this.shoeSize = shoeSize;
     }
-    findCinderella(array, shoeSize = this.shoeSize, name = this.name) {
+    findCinderella(array) {
         for (let cinderella of array) {
-            if (cinderella.footSize === shoeSize) console.log(`${name} and ${cinderella.name}`)
+            if (cinderella.footSize === this.shoeSize) console.log(`${this.name} and ${cinderella.name}`)
         }
     }
-    findCinderella2(array, shoeSize = this.shoeSize, name = this.name) {
-        array.find(function (cinderella) {
-            if (cinderella.footSize === shoeSize) console.log(`${name} and ${cinderella.name}`)
+    findCinderella2(array) {
+        array.find(cinderella => {
+            if (cinderella.footSize === this.shoeSize) console.log(`${this.name} and ${cinderella.name}`)
         })
     }
 }
