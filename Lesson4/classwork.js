@@ -96,7 +96,7 @@ function Car(model, manufacturer, yearOfManufacture, maxSpeed, engineCapacity) {
     }
 }
 
-let car1 = new Car('320i', 'BMW', 2003,226,'2.2')
+let car1 = new Car('320i', 'BMW', 2003, 226, '2.2')
 car1.drive();
 car1.info();
 car1.increaseMaxSpeed(20);
@@ -112,27 +112,32 @@ console.log(car1);
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
 class Car2 {
-    constructor (model, manufacturer, yearOfManufacture, maxSpeed, engineCapacity) {
+    constructor(model, manufacturer, yearOfManufacture, maxSpeed, engineCapacity) {
         this.model = model;
         this.manufacturer = manufacturer;
         this.yearOfManufacture = yearOfManufacture;
         this.maxSpeed = maxSpeed;
         this.engineCapacity = engineCapacity;
     }
+
     drive() {
         console.log(`Їдемо зі швидкістю ${this.maxSpeed} км на годину`)
     };
+
     info() {
         console.log(`Модель - ${this.model}, виробник - ${this.manufacturer}, рік випуску - ${this.yearOfManufacture}, максимальна швидкість - ${this.maxSpeed}, об'єм двигуна - ${this.engineCapacity}  `)
     };
+
     increaseMaxSpeed(newSpeed) {
-        this.maxSpeed= this.maxSpeed + newSpeed;
+        this.maxSpeed = this.maxSpeed + newSpeed;
         console.log(`Значення максимальної швидкості підвищене на ${newSpeed} км/год та складає ${this.maxSpeed} км на годину`)
     }
+
     changeYear(newValue) {
         this.yearOfManufacture = newValue;
         console.log(`Рік випуску змінено на ${this.yearOfManufacture}`)
     }
+
     addDriver(name, age) {
         this.driver = {
             name,
@@ -141,7 +146,8 @@ class Car2 {
         console.log(`Додано водія ${this.driver.name}, вік - ${this.driver.age} р.`)
     }
 }
-let car3 = new Car2('RS4','Audi',2007,250,'4.2');
+
+let car3 = new Car2('RS4', 'Audi', 2007, 250, '4.2');
 car3.drive();
 car3.info();
 car3.increaseMaxSpeed(40);
@@ -154,23 +160,23 @@ console.log(car3);
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 class Cinderella {
-    constructor (name,age, footSize) {
+    constructor(name, age, footSize) {
         this.name = name;
         this.age = age;
         this.footSize = footSize;
     }
 }
 
-let cinderella1 = new Cinderella('Olivia',20,37)
-let cinderella2 = new Cinderella('Isabella',21,38)
-let cinderella3 = new Cinderella('Emma',22,37)
-let cinderella4 = new Cinderella('Ava',20,38)
-let cinderella5 = new Cinderella('Charlotte',24,39)
-let cinderella6 = new Cinderella('Sophia',21,37)
-let cinderella7 = new Cinderella('Amelia',25,38)
-let cinderella8 = new Cinderella('Mia',21,36)
-let cinderella9 = new Cinderella('Elizabeth',22,38)
-let cinderella10 = new Cinderella('Penelope',26,39)
+let cinderella1 = new Cinderella('Olivia', 20, 37)
+let cinderella2 = new Cinderella('Isabella', 21, 38)
+let cinderella3 = new Cinderella('Emma', 22, 37)
+let cinderella4 = new Cinderella('Ava', 20, 38)
+let cinderella5 = new Cinderella('Charlotte', 24, 39)
+let cinderella6 = new Cinderella('Sophia', 21, 37)
+let cinderella7 = new Cinderella('Amelia', 25, 38)
+let cinderella8 = new Cinderella('Mia', 21, 36)
+let cinderella9 = new Cinderella('Elizabeth', 22, 38)
+let cinderella10 = new Cinderella('Penelope', 26, 37)
 
 let cinderellasList = [
     cinderella1,
@@ -186,19 +192,27 @@ let cinderellasList = [
 ]
 
 class Prince {
-    constructor (name,age, shoeSize) {
+    constructor(name, age, shoeSize) {
         this.name = name;
         this.age = age;
         this.shoeSize = shoeSize;
     }
+    findCinderella(array, shoeSize = this.shoeSize, name = this.name) {
+        for (let cinderella of array) {
+            if (cinderella.footSize === shoeSize) console.log(`${name} and ${cinderella.name}`)
+        }
+    }
+    findCinderella2(array, shoeSize = this.shoeSize, name = this.name) {
+        array.find(function (cinderella) {
+            if (cinderella.footSize === shoeSize) console.log(`${name} and ${cinderella.name}`)
+        })
+    }
 }
 
-let prince = new Prince('Eric',27,36)
+let prince = new Prince('Eric', 27, 36)
+let prince2 = new Prince('Derek', 26, 39)
 
-for (let cinderella of cinderellasList) {
-    if (cinderella.footSize === prince.shoeSize) console.log(`${prince.name} and ${cinderella.name}`)
-}
+prince.findCinderella(cinderellasList)
+prince2.findCinderella2(cinderellasList)
 
-cinderellasList.find(function (cinderella) {
-    if (cinderella.footSize === prince.shoeSize) console.log(`${prince.name} and ${cinderella.name}`)
-})
+
