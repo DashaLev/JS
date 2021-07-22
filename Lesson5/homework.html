@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        .bg-red {
+            background-color: tomato;
+        }
+        .c-blue {
+            color: blue;
+        }
+        .c-red {
+            color: red;
+        }
+	</style>
+</head>
+<body>
+<p id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate deleniti
+	molestias mollitia pariatur porro saepe! Dolorem eaque earum eligendi, iste maxime molestias quam vitae.
+	Dolore hic in quae sed.
+</p>
+
+<div id="rules" class="fc bp">
+	Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе. Второе правило Бойцовского
+	клуба: никогда никому не рассказывать о Бойцовском клубе. Третье правило Бойцовского клуба: в схватке
+	участвуют только двое. Четвертое правило Бойцовского клуба: не более одного поединка за один раз
+</div>
+
+<ul>
+	<li class="fc_rules rule1">Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</li>
+	<li class="fc_rules rule2">Второе правило Бойцовского
+		клуба: никогда никому не рассказывать о Бойцовском клубе
+	</li>
+	<li class="fc_rules rule3">Третье правило Бойцовского клуба: в схватке
+		участвуют только двое.
+	</li>
+	<li class="fc_rules rule4">Четвертое правило Бойцовского клуба: не более одного поединка за один раз</li>
+</ul>
+
+<script>
+    // - Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+    // -- отримує текст з параграфа з id "content"
+    let divContent = document.getElementById('content')
+    let divContentText = divContent.innerText
+    console.log(divContentText);
+
+    // -- отримує текст з блоку з id "rules"
+    let divRules = document.getElementById('rules')
+    console.log(divRules.innerText);
+
+    // -- замініть текст параграфа з id 'content' на будь-який інший
+    divContent.innerText = 'Будь-який інший текст параграфа з id content'
+
+    // -- замініть текст параграфа з id 'rules' на будь-який інший
+    divRules.innerText = 'Будь-який інший текст параграфа з id rules'
+
+    // -- змініть кожному елементу колір фону на червоний
+    let allElements = document.body.children
+    for (let element of allElements) {
+        element.classList.add('bg-red')
+    }
+    console.log(allElements);
+
+    // -- змініть кожному елементу колір тексту на синій
+    for (let element of allElements) {
+        element.classList.add('c-blue')
+    }
+    // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
+    console.log(divRules.classList);
+
+    // -- отримати всі елементи з класом fc_rules. визначити їм products події "клік", одна вивдоить текст елементу, інша довільний ьексь
+    let fcRulesElements = document.getElementsByClassName('fc_rules')
+    for (let element of fcRulesElements) {
+	    element.addEventListener('click', function () {
+            console.log(element.innerText);
+        })
+        element.addEventListener('click', function () {
+            console.log('2-га подія "клік"');
+        })
+    }
+
+    // -- поміняти колір тексту у всіх елементів fc_rules на червоний
+    for (let element of fcRulesElements) {
+        element.classList.add('c-red')
+    }
+</script>
+
+</body>
+</html>

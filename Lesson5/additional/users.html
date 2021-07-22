@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let users = [
+        {
+            name: 'vasya',
+            age: 31,
+            status: false,
+            address: {city: 'Lviv', country: 'Ukraine', street: 'Shevchenko', houseNumber: 1}
+        },
+        {
+            name: 'petya',
+            age: 30,
+            status: true,
+            address: {city: 'New York', country: 'USA', street: 'East str', houseNumber: 21}
+        },
+        {
+            name: 'kolya',
+            age: 29,
+            status: true,
+            address: {city: 'Budapest', country: 'Hungary', street: 'Kuraku', houseNumber: 78}
+        },
+        {
+            name: 'olya',
+            age: 28,
+            status: false,
+            address: {city: 'Prague', country: 'Czech', street: 'Paster', houseNumber: 56}
+        },
+        {
+            name: 'max',
+            age: 30,
+            status: true,
+            address: {city: 'Istanbul', country: 'Turkey', street: 'Mikar', houseNumber: 39}
+        },
+        {
+            name: 'anya',
+            age: 31,
+            status: false,
+            address: {city: 'Rio', country: 'Brasil', street: 'Ronaldi', houseNumber: 5}
+        },
+        {
+            name: 'oleg',
+            age: 28,
+            status: false,
+            address: {city: 'Montreal', country: 'Canada', street: 'Acusto', houseNumber: 90}
+        },
+        {
+            name: 'andrey',
+            age: 29,
+            status: true,
+            address: {city: 'Quebeck', country: 'Canada', street: 'Binaro', houseNumber: 33}
+        },
+        {
+            name: 'masha',
+            age: 30,
+            status: true,
+            address: {city: 'Moscow', country: 'Russia', street: 'Gogolia', houseNumber: 1}
+        },
+        {
+            name: 'olya',
+            age: 31,
+            status: false,
+            address: {city: 'Portland', country: 'USA', street: 'Forest str', houseNumber: 4}
+        },
+        {
+            name: 'max',
+            age: 31,
+            status: true,
+            address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}
+        }
+    ]
+
+   //- З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
+   let addressArr = [];
+   for (let element of users) {
+       addressArr.push(element.address)
+   }
+   // console.log(addressArr);
+
+   //- За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
+    let wrapperDiv = document.createElement('div')
+    for (let element of users) {
+        let elDiv = document.createElement('div')
+        elDiv.style.margin = '5px 0'
+        elDiv.style.backgroundColor = "beige"
+
+        elDiv.innerText = `Name: ${element.name}; Age: ${element.age}; Status: ${element.status}; Address: ${element.address.country}, ${element.address.city}, ${element.address.street}, ${element.address.houseNumber}`
+        wrapperDiv.appendChild(elDiv)
+    }
+   document.body.appendChild(wrapperDiv)
+
+   // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+    let wrapperDiv1 = document.createElement('div')
+        wrapperDiv1.style.margin = '20px 0'
+
+    for (let element of users) {
+        let elDiv = document.createElement('div')
+			elDiv.style.margin = '10px 0'
+            elDiv.style.backgroundColor = "aliceblue"
+
+	    let propertyName = document.createElement('div')
+        propertyName.innerText = `Name: ${element.name}`
+
+        let propertyAge = document.createElement('div')
+        propertyAge.innerText = `Age: ${element.age}`
+
+        let propertyStatus = document.createElement('div')
+        propertyStatus.innerText = `Status: ${element.status}`
+
+        let propertyAddress = document.createElement('div')
+        propertyAddress.innerText = `Address: ${element.address.country}, ${element.address.city}, ${element.address.street}, ${element.address.houseNumber}`
+
+        elDiv.appendChild(propertyName)
+        elDiv.appendChild(propertyAge)
+        elDiv.appendChild(propertyStatus)
+        elDiv.appendChild(propertyAddress)
+
+        wrapperDiv1.appendChild(elDiv)
+    }
+    document.body.appendChild(wrapperDiv1)
+
+   // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+    let wrapperDiv2 = document.createElement('div')
+
+    for (let element of users) {
+        let elDiv = document.createElement('div')
+            elDiv.style.margin = '10px 0'
+            elDiv.style.backgroundColor = 'gainsboro'
+
+        let propertyName = document.createElement('div')
+        propertyName.innerText = `Name: ${element.name}`
+
+        let propertyAge = document.createElement('div')
+        propertyAge.innerText = `Age: ${element.age}`
+
+        let propertyStatus = document.createElement('div')
+        propertyStatus.innerText = `Status: ${element.status}`
+
+        let propertyAddress = document.createElement('div')
+        propertyAddress.innerText = 'Address:'
+
+        let propertyCountry = document.createElement('div')
+        propertyCountry.innerText = `Country: ${element.address.country}`
+
+        let propertyCity = document.createElement('div')
+        propertyCity.innerText = `City: ${element.address.city}`
+
+        let propertyStreet = document.createElement('div')
+        propertyStreet.innerText = `Street: ${element.address.street}`
+
+        let propertyHouseNumber = document.createElement('div')
+        propertyHouseNumber.innerText = `House number: ${element.address.houseNumber}`
+
+        propertyCountry.style.marginLeft = '25px'
+        propertyCity.style.marginLeft = '25px'
+        propertyStreet.style.marginLeft = '25px'
+        propertyHouseNumber.style.marginLeft = '25px'
+
+        propertyAddress.appendChild(propertyCountry)
+        propertyAddress.appendChild(propertyCity)
+        propertyAddress.appendChild(propertyStreet)
+        propertyAddress.appendChild(propertyHouseNumber)
+
+        elDiv.appendChild(propertyName)
+        elDiv.appendChild(propertyAge)
+        elDiv.appendChild(propertyStatus)
+        elDiv.appendChild(propertyAddress)
+
+        wrapperDiv2.appendChild(elDiv)
+    }
+    document.body.appendChild(wrapperDiv2)
+
+</script>
+</body>
+</html>

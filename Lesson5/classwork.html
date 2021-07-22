@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        .w-400 {
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+	</style>
+</head>
+<body>
+<h1 id="main_header">This is page for task2</h1>
+<ul>
+	<li class="linkList listElement1"><a href="#">link1</a></li>
+	<li class="linkList listElement2"><a href="#">link2</a></li>
+	<li class="linkList listElement3"><a href="#">link3</a></li>
+</ul>
+<h3 class="sub-header">content 1 segment</h3>
+<div class="content_1">
+	<p class="text_segment text1">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet at autem cumque distinctio,
+		dolorem
+		eligendi eum eveniet facere inventore ipsa minus pariatur repellendus sequi sit veniam voluptatum.
+		Fugit,
+		soluta?</p>
+
+</div>
+<h3 class="sub-header">content 2 segment</h3>
+<div class="content_2">
+	<p class="text_segment text2">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, exercitationem modi mollitia
+		omnis
+		possimus quam rerum sequi temporibus tenetur! Accusantium ad commodi eveniet excepturi laboriosam quis
+		quisquam sint temporibus.</p>
+</div>
+<script>
+    // input_with_name) Напишіть код, який :
+    // a) змінює колір тексту елемнту з ід main_header на назву групи в якій ви вчитесь (mon-year)
+    let elMainHeader = document.getElementById('main_header')
+    elMainHeader.innerText = 'June-2021-incubator'
+
+    // b) робить шириниу елементу ul 400px
+    let ulElement = document.getElementsByTagName('ul')[0]
+    ulElement.classList.add('w-400')
+
+    // c) робить шириниу всіх елементів з класом linkList шириною 50%
+    let linkListElements = document.getElementsByClassName('linkList')
+    for (let element of linkListElements) {
+        element.classList.add('w-50')
+    }
+
+    // d) отримує текст який зберігається в елементі з класом listElement2
+    let listElement2 = document.getElementsByClassName('listElement2')[0].innerText
+    console.log(listElement2);
+
+    // e) отримує всі елементи li та змінює ім колір фону на сірий
+    let liElements = document.getElementsByTagName('li')
+    for (let element of liElements) {
+        element.style.backgroundColor = 'silver'
+    }
+    // f) отримує всі елементи 'a' та додає їм клас anchor
+    let aElements = document.getElementsByTagName('a')
+    for (let element of aElements) {
+        element.classList.add('anchor')
+    }
+
+    // g) отримує всі елементи 'a' та у випадку, якщо текстовий контен елементу дорівнює link3, змінює йому розмір тексту на 40 пікселів
+    for (let element of aElements) {
+        if (element.innerText === 'link3') element.style.fontSize = '40px'
+    }
+
+    // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
+    for (let element of aElements) {
+        element.classList.add(`element_${element.innerText}`)
+    }
+    // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
+    let subHeaderElements = document.getElementsByClassName('sub-header')
+    let bgColor = prompt('Enter background color')
+    for (let element of subHeaderElements) {
+        element.style.backgroundColor = bgColor
+    }
+    // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content products segment . Колір отримати з prompt()
+    let textColor = prompt('Enter text color')
+    for (let element of subHeaderElements) {
+        if (element.innerText === 'content 2 segment') element.style.color = textColor
+    }
+
+    // k) отримує елемент з класом content_1 та заміняє в ньому тест на довільний. Текст отримати з prompt()
+    let content1Elements = document.getElementsByClassName('content_1')
+    let content1Element = content1Elements[0]
+    let content1ElementText = prompt('Enter text')
+    // content1Element.innerText = content1ElementText
+    content1Element.getElementsByClassName('text1')[0].innerText = content1ElementText
+
+    // l) отримати елементи p та змінити їм padding на 20px
+    let pElements = document.getElementsByTagName('p')
+    for (let element of pElements) {
+	    element.style.padding = '20px'
+    }
+
+    // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year)
+    let text2Elements = document.getElementsByClassName('text2')
+    let text2Element = text2Elements[0]
+    text2Element.innerText = 'June-2021-incubator'
+
+</script>
+
+</body>
+</html>

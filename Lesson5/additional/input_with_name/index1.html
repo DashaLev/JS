@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		form {
+			width: 300px;
+			margin: 20px auto;
+		}
+	</style>
+</head>
+	<body>
+		<form action="index2.html" name="form1">
+			<input type="text" name="username">
+			<button>Send</button>
+		</form>
+		<script>
+			let form = document.forms.form1
+			let username = form.username
+            username.oninput = function (e) {
+                console.log(e.target.value)
+	            localStorage.setItem('name', e.target.value)
+            }
+		</script>
+	</body>
+</html>

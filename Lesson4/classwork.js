@@ -96,7 +96,7 @@ function Car(model, manufacturer, yearOfManufacture, maxSpeed, engineCapacity) {
     }
 }
 
-let car1 = new Car('320i', 'BMW', 2003, 226, '2.2')
+let car1 = new Car('320i', 'BMW', 2003, 226, 'products.products')
 car1.drive();
 car1.info();
 car1.increaseMaxSpeed(20);
@@ -147,7 +147,7 @@ class Car2 {
     }
 }
 
-let car3 = new Car2('RS4', 'Audi', 2007, 250, '4.2');
+let car3 = new Car2('RS4', 'Audi', 2007, 250, '4.products');
 car3.drive();
 car3.info();
 car3.increaseMaxSpeed(40);

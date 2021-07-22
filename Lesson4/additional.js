@@ -2,7 +2,7 @@
 // Конструктор повинен приймати значення для кожної властивості, в т.ч і для властивостей внутрішніх об'єктів
 //
 // {
-//     id: 1,
+//     id: input_with_name,
 //     name: 'Leanne Graham',
 //     username: 'Bret',
 //     email: 'Sincere@april.biz',
@@ -16,7 +16,7 @@
 //              lng: '81.1496'
 //         }
 //     },
-//     phone: '1-770-736-8031 x56442',
+//     phone: 'input_with_name-770-736-8031 x56442',
 //     website: 'hildegard.org',
 //     company: {
 //         name: 'Romaguera-Crona',
@@ -52,7 +52,7 @@ class UserCard {
 
 }
 
-let user1 = new UserCard(1, 'Leanne Graham', 'Bret', 'Sincere@april.biz', 'Kulas Light', 'Apt. 556', 'Gwenborough', '92998-3874', '-37.3159', '81.1496', '1-770-736-8031 x56442', 'hildegard.org', 'Romaguera-Crona', 'Multi-layered client-server neural-net', 'harness real-time e-markets')
+let user1 = new UserCard(1, 'Leanne Graham', 'Bret', 'Sincere@april.biz', 'Kulas Light', 'Apt. 556', 'Gwenborough', '92998-3874', '-37.3159', '81.1496', 'input_with_name-770-736-8031 x56442', 'hildegard.org', 'Romaguera-Crona', 'Multi-layered client-server neural-net', 'harness real-time e-markets')
 
 console.log(user1);
 
@@ -62,7 +62,7 @@ console.log(user1);
 // Поля :
 //     -назва тегу ()
 // - опис його дій
-// - масив з атрибутами (2-3 атрибути максимум)
+// - масив з атрибутами (products-3 атрибути максимум)
 // Кожен атрибут описати як окремий який буде містити
 // -назву атрибуту
 // -опис дії атрибуту

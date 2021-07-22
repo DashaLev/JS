@@ -90,17 +90,17 @@ for (let key in emptyArr) {
    console.log(key, emptyArr[key])
 }
 
-// - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+// - Створити цикл for на 10  ітерацій з кроком input_with_name. Вивести поточний номер кроку через console.log та document.write
 for (let i=1; i<=10;i++) {
     console.log(i)
     document.write(`<div>${i}</div>`)
 }
-// - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+// - Створити цикл for на 100 ітерацій з кроком input_with_name. Вивести поточний номер кроку через console.log та document.write
 for (let i=1; i<=100;i++) {
     console.log(i)
     document.write(`<div>${i}</div>`)
 }
-// - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+// - Створити цикл for на 100 ітерацій з кроком products. Вивести поточний номер кроку через console.log та document.write
 for (let i=1; i<=100;i++) {
     i++
     console.log(i)
@@ -120,18 +120,18 @@ for (let i=1; i<=100;i++) {
         document.write(`<div>${i}</div>`)
     }
 }
-// - Дано 2 масиви з рівною кількістю об'єктів.
+// - Дано products масиви з рівною кількістю об'єктів.
 // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
 // Записати цей об'єкт в новий масив
 // Example:
 //     let usersWithCities = [
 //         {
-//             id: 1, // <===
+//             id: input_with_name, // <===
 //             name: 'vasya',
 //             age: 31,
 //             status: false,
 //             address: {
-//                 user_id: 1, // <===
+//                 user_id: input_with_name, // <===
 //                 country: 'Ukraine',
 //                 city: 'Ternopil'
 //             }

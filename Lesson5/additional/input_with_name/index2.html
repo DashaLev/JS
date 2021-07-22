@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		#wrap {
+			width: 300px;
+			margin: 20px auto;
+			background-color: silver;
+            padding: 20px;
+		}
+        #wrap div {
+	        text-transform: uppercase;
+	        font-size: 18px;
+        }
+	</style>
+</head>
+	<body>
+	<div id="wrap"></div>
+		<script>
+			let wrapDiv = document.getElementById('wrap')
+            let name = localStorage.getItem('name')
+			let div = document.createElement('div')
+            div.innerText = name
+            wrapDiv.appendChild(div)
+		</script>
+	</body>
+</html>
