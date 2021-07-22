@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		#productsForm{
+			display: flex;
+            width: 600px;
+            justify-content: space-around;
+            margin: 20px auto;
+		}
+		button {
+			display: block;
+		}
+		a {
+			display: block;
+            margin: 20px auto;
+            width: 100px;
+            font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+<form id="productsForm">
+	<div class="product-card">
+		<div class="product-title">Яблуко</div>
+		<div class="product-quantity">1 кг</div>
+		<div class="product-price">20 грн</div>
+		<img src="https://hmarapara.com/media/2017/11/apple-tfa-2.jpg" alt="product photo" width="100px">
+		<button>Додати у кошик</button>
+	</div>
+	<div class="product-card">
+		<div class="product-title">Слива</div>
+		<div class="product-quantity">1 кг</div>
+		<div class="product-price">30 грн</div>
+		<img src="https://flora-ua.com/image/cache/catalog/category/plod_sliva-300x300.jpg" alt="product photo" width="100px">
+		<button>Додати у кошик</button>
+	</div>
+	<div class="product-card">
+		<div class="product-title">Персик</div>
+		<div class="product-quantity">1 кг</div>
+		<div class="product-price">40 грн</div>
+		<img src="https://freshmart.com.ua/storage/web/cache/product/2240/persik-turechchina-500g.jpg?w=700&h=525&fit=resize&q=80&fm=pjpg&t=1605734203&s=cfd77f11c2a765003115a37fd3db3c9f" alt="product photo" width="100px">
+		<button>Додати у кошик</button>
+	</div>
+	<div class="product-card">
+		<div class="product-title">Нектарин</div>
+		<div class="product-quantity">1 кг</div>
+		<div class="product-price">45 грн</div>
+		<img src="https://resizer.mail.ru/p/8c3e1ce5-56e1-5dbf-9b9d-9c60366f3513/AAAc5IG2EualkOh_5E3dzghGqDOFzwHsjNjM7Cl1CpHU8IGRh0eH-TmrfYc5QIDLnkF7EpsOUMpnGDlRcynqcuh098o.jpg" alt="product photo" width="100px">
+		<button>Додати у кошик</button>
+	</div>
+</form>
+
+<a href="list.html" target="_blank">Всі товари</a>
+<script>
+// - Імітуємо наповнення інтернет магазину товарами :
+// Створити форму з наступними полями :
+// - назва товару
+// - кількість товару
+// - ціна товару
+// - картинка товару (посилання з інтернету)
+// Зберігати товари в масив в локалсорадж. При збережені товару з форми, action не повинно відбуватись.
+// створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на сторінці всі товари.
+// На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
+// До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
+
+let form = document.forms.productsForm
+let productArr = form.getElementsByClassName('product-card')
+let cart =[]
+
+
+
+for (let product of productArr) {
+
+    let productTitle = product.getElementsByClassName('product-title')[0].innerText
+    let productQuantity = product.getElementsByClassName('product-quantity')[0].innerText
+    let productPrice = product.getElementsByClassName('product-price')[0].innerText
+    let productImage = product.getElementsByTagName('img')[0].getAttribute('src')
+    let btnAdd = product.getElementsByTagName('button')[0]
+
+    btnAdd.onclick = function (e) {
+        e.preventDefault()
+
+	    let productObj = {
+            title:productTitle,
+            quantity:productQuantity,
+            price:productPrice,
+            image:productImage,
+	    }
+        btnAdd.innerText = 'Додано у кошик'
+        cart.push(productObj)
+
+        localStorage.setItem('products', JSON.stringify(cart))
+    }
+    console.log(localStorage);
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        h1 {
+            text-align: center;
+        }
+
+        #productContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 150px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+        }
+	</style>
+</head>
+<body>
+<h1>Товари у корзині</h1>
+<button class="deleteAll">Видалити всі товари</button>
+<div id="productContainer"></div>
+
+<script>
+    let productsInCart = localStorage.getItem('products')
+    let products = JSON.parse(productsInCart) || []
+    let productContainer = document.getElementById('productContainer')
+
+    let btnDeleteAll = document.getElementsByClassName('deleteAll')[0]
+
+    btnDeleteAll.onclick = function () {
+        localStorage.clear()
+        window.location.reload()
+    }
+
+    for (let product of products) {
+        let productDiv = document.createElement('div')
+        let productTitleDiv = document.createElement('div')
+        let productPriceDiv = document.createElement('div')
+        let productQuantityDiv = document.createElement('div')
+        let productImage = document.createElement('img')
+        let deleteBtn = document.createElement('button')
+
+        productTitleDiv.innerText = product.title
+        productPriceDiv.innerText = product.price
+        productQuantityDiv.innerText = product.quantity
+        productImage.setAttribute('src', product.image)
+        deleteBtn.innerText = 'Видалити продукт'
+
+        productDiv.appendChild(productTitleDiv)
+        productDiv.appendChild(productPriceDiv)
+        productDiv.appendChild(productQuantityDiv)
+        productDiv.appendChild(productImage)
+        productDiv.appendChild(deleteBtn)
+
+        deleteBtn.onclick = function () {
+            let index = products.indexOf(product)
+            products.splice(index, 1)
+            localStorage.setItem('products', JSON.stringify(products))
+            window.location.reload()
+        }
+
+        productContainer.appendChild(productDiv)
+    }
+
+
+
+
+</script>
+</body>
+</html>
