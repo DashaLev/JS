@@ -18,8 +18,7 @@ let n1 = '    Harry       Potter      '
 let n2 = '    Ron       Whisley      '
 let n3 = '    Hermione       Granger      '
 function normalizeName(name) {
-    let name1 = name.trim();
-    console.log(name1.split('  ').join(''));
+    let name1 = name.trim().split(' ').filter(item => item !== '').join(' ');
 }
 normalizeName(n2)
 
