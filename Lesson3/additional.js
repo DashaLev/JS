@@ -15,13 +15,15 @@ replaceByIndex([9,8,0,4], 0)
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
 let n1 = '    Harry       Potter      '
-let n2 = '    Ron       Whisley      '
+let n2 = '    Ron                                  Whisley      '
 let n3 = '    Hermione       Granger      '
 function normalizeName(name) {
-    let name1 = name.trim();
-    console.log(name1.split('  ').join(''));
+    let name1 = name.trim().split(' ').filter(item => item !== '').join(' ');
+    console.log(name1);
 }
+normalizeName(n1)
 normalizeName(n2)
+normalizeName(n3)
 
 // - Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
 // Двожина масиву від products до 100
