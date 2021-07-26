@@ -15,7 +15,7 @@ replaceByIndex([9,8,0,4], 0)
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
 let n1 = '    Harry       Potter      '
-let n2 = '    Ron                                  Whisley      '
+let n2 = '    Ron       Whisley      '
 let n3 = '    Hermione       Granger      '
 function normalizeName(name) {
     let name1 = name.trim().split(' ').filter(item => item !== '').join(' ');
