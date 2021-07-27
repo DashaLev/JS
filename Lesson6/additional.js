@@ -47,6 +47,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                     .then(value => {
 
                         postsWrap.innerText = '';
+                        commentsBox.innerText = '';
 
                         let postsTitle = document.createElement('h2')
                         postsTitle.innerText = `Posts by ${user.name}`
